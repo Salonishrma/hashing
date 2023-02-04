@@ -27,7 +27,8 @@ int PrimeHash(int key){
 int DoubleHash(int H[], int key){
     int idx = Hash(key);
     int i = 0;
-    while (H[(Hash(idx) + i * PrimeHash(idx)) % SIZE] != 0){
+    while (H[(Hash(idx) + i * PrimeHash(idx)) % SIZE] != 0){ 
+        //find the last prime number from the range given for hash table
         i++;
     }
     return (idx + i * PrimeHash(idx)) % SIZE;
